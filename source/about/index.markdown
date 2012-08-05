@@ -6,3 +6,4 @@ comments: true
 sharing: true
 footer: true
 ---
+Ajay George is a developer. I am on [Twitter](https://twitter.com/ajaygeorge) and on [StackOverflow](http://stackoverflow.com/users/628943/ajay-george)
