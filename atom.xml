@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Ajay George Code Blog]]></title>
+  <link href="http://ajaygeorge.github.com/atom.xml" rel="self"/>
+  <link href="http://ajaygeorge.github.com/"/>
+  <updated>2012-09-18T01:12:39+05:30</updated>
+  <id>http://ajaygeorge.github.com/</id>
+  <author>
+    <name><![CDATA[Ajay George]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Why is this CAmel Case]]></title>
+    <link href="http://ajaygeorge.github.com/blog/2012/09/18/why-are-com-dot-sun-dot-management-dot-threadmxbean-methods-disabled-in-jconsole/"/>
+    <updated>2012-09-18T00:13:00+05:30</updated>
+    <id>http://ajaygeorge.github.com/blog/2012/09/18/why-are-com-dot-sun-dot-management-dot-threadmxbean-methods-disabled-in-jconsole</id>
+    <content type="html"><![CDATA[<p>I had always wondered why some methods on the JConsole are disabled. You can see it in action if you check out the ThreadMXBean which is a part of the JDK
+<img src="http://i.stack.imgur.com/38lh7.png"></p>
+
+<p>I asked this question on SO. I indeed got a wonderful reply.
+Here is the reason :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Only primitives, primitive wrappers and  additional Classes such as BigDecimal.class, BigInteger.class, Number.class, String.class, ObjectName.class are allowed as arguments to valid methods.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For the simple reason that JConsole does not know how to read up other objects as arguments to the exposed methods, they are disabled.
+Read the complete discussion on SO <a href="http://stackoverflow.com/questions/12025003/why-are-some-methods-on-the-jconsole-disabled">here</a> .</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Error in JLS]]></title>
+    <link href="http://ajaygeorge.github.com/blog/2012/08/05/error-in-jls/"/>
+    <updated>2012-08-05T22:22:00+05:30</updated>
+    <id>http://ajaygeorge.github.com/blog/2012/08/05/error-in-jls</id>
+    <content type="html"><![CDATA[<p>There was an interesting question on SO regarding the JLS.</p>
+
+<blockquote><p>Is a member interface in a class declaration implicitly public?</p><footer><strong>StackOverflow</strong> <cite><a href='http://stackoverflow.com/questions/11638627/is-a-member-interface-in-a-class-declaration-implicitly-public/'>Link</a></cite></footer></blockquote>
+
+
+<p>I got to answer the question correctly.
+Turns out the JLS was indeed wrong !.</p>
+]]></content>
+  </entry>
+  
+</feed>
