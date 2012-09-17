@@ -4,7 +4,7 @@
   <title><![CDATA[Ajay George Code Blog]]></title>
   <link href="http://ajaygeorge.github.com/atom.xml" rel="self"/>
   <link href="http://ajaygeorge.github.com/"/>
-  <updated>2012-09-18T01:12:39+05:30</updated>
+  <updated>2012-09-18T01:57:40+05:30</updated>
   <id>http://ajaygeorge.github.com/</id>
   <author>
     <name><![CDATA[Ajay George]]></name>
@@ -14,14 +14,14 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Why is this CAmel Case]]></title>
+    <title type="html"><![CDATA[Why are com.sun.management.ThreadMXBean methods disabled in JConsole]]></title>
     <link href="http://ajaygeorge.github.com/blog/2012/09/18/why-are-com-dot-sun-dot-management-dot-threadmxbean-methods-disabled-in-jconsole/"/>
     <updated>2012-09-18T00:13:00+05:30</updated>
     <id>http://ajaygeorge.github.com/blog/2012/09/18/why-are-com-dot-sun-dot-management-dot-threadmxbean-methods-disabled-in-jconsole</id>
     <content type="html"><![CDATA[<p>I had always wondered why some methods on the JConsole are disabled. You can see it in action if you check out the ThreadMXBean which is a part of the JDK
 <img src="http://i.stack.imgur.com/38lh7.png"></p>
 
-<p>I asked this question on SO. I indeed got a wonderful reply.
+<p>I asked this question on SO and indeed got a wonderful reply.
 Here is the reason :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
