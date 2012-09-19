@@ -11,15 +11,21 @@
         <lastmod>2012-09-18T01:57:22+05:30</lastmod>
     </url>
     <url>
+        <loc>
+            http://ajaygeorge.github.com/blog/2012/09/19/switching-off-camel-case-in-octopress/
+        </loc>
+        <lastmod>2012-09-19T23:06:43+05:30</lastmod>
+    </url>
+    <url>
         <loc>http://ajaygeorge.github.com/about/</loc>
         <lastmod>2012-09-18T01:44:33+05:30</lastmod>
     </url>
     <url>
         <loc>http://ajaygeorge.github.com/blog/archives/</loc>
-        <lastmod>2012-09-18T01:57:22+05:30</lastmod>
+        <lastmod>2012-09-19T23:06:43+05:30</lastmod>
     </url>
     <url>
         <loc>http://ajaygeorge.github.com/</loc>
-        <lastmod>2012-09-18T01:57:22+05:30</lastmod>
+        <lastmod>2012-09-19T23:06:43+05:30</lastmod>
     </url>
 </urlset>

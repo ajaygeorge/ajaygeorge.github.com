@@ -4,7 +4,7 @@
   <title><![CDATA[Ajay George Code Blog]]></title>
   <link href="http://ajaygeorge.github.com/atom.xml" rel="self"/>
   <link href="http://ajaygeorge.github.com/"/>
-  <updated>2012-09-18T01:57:40+05:30</updated>
+  <updated>2012-09-19T23:06:55+05:30</updated>
   <id>http://ajaygeorge.github.com/</id>
   <author>
     <name><![CDATA[Ajay George]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Switching off Camel Case in Octopress]]></title>
+    <link href="http://ajaygeorge.github.com/blog/2012/09/19/switching-off-camel-case-in-octopress/"/>
+    <updated>2012-09-19T22:21:00+05:30</updated>
+    <id>http://ajaygeorge.github.com/blog/2012/09/19/switching-off-camel-case-in-octopress</id>
+    <content type="html"><![CDATA[<p>Ever wondered how to switch off <a href="http://en.wikipedia.org/wiki/CamelCase">Camel Case</a> in Octopress?. By default Octopress has Camel case switched on for both pages and titles, which could be a bit annoying at times.<br/>
+<a href="https://github.com/imathis">imathis</a> just committed an update using which you can switch off Camel Case. View the commit details <a href="https://github.com/imathis/octopress/commit/3f842465bdd4e9dc2a735bb34a80fb6f78b387bb">here</a> .</p>
+
+<p>Breaking it down, here is what you have to do :</p>
+
+<blockquote><ul>
+<li>Update to latest version of octopress.</li>
+<li>In your <code>_config.yml</code> change <code>titlecase</code> from true to false.
+That&#8217;s it. !</li>
+</ul>
+</blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Why are com.sun.management.ThreadMXBean methods disabled in JConsole]]></title>
