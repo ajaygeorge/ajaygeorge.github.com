@@ -4,7 +4,7 @@
   <title><![CDATA[Ajay George Code Blog]]></title>
   <link href="http://ajaygeorge.github.com/atom.xml" rel="self"/>
   <link href="http://ajaygeorge.github.com/"/>
-  <updated>2012-09-19T23:06:55+05:30</updated>
+  <updated>2013-03-17T00:57:47+05:30</updated>
   <id>http://ajaygeorge.github.com/</id>
   <author>
     <name><![CDATA[Ajay George]]></name>
@@ -12,6 +12,103 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[First among Equals]]></title>
+    <link href="http://ajaygeorge.github.com/blog/2013/03/17/first-among-equals/"/>
+    <updated>2013-03-17T00:37:00+05:30</updated>
+    <id>http://ajaygeorge.github.com/blog/2013/03/17/first-among-equals</id>
+    <content type="html"><![CDATA[<p>Much has been told about the <code>Equals</code> method in java. It&#8217;s importance along with <code>hashCode</code> is well documented.</p>
+
+<p>The contract of equals method states that it should be</p>
+
+<blockquote><p>Reflexive, Symmetric, Transitive and Consistent.</p></blockquote>
+
+<p>Symmetry sounds easy, but could be extremely hard to get right.</p>
+
+<p>The <code>CaseInsensitive</code> String example in Effective Java Item 8 is an excellent discussion on the same. Read it if you haven&#8217;t read it already.</p>
+
+<p>I was quite surprised to find the equals implementation broken in the <a href="https://jira.mongodb.org/browse/JAVA-609">MongoDB Java Driver</a>.</p>
+
+<p>The equals Implementation:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public boolean equals( Object o ){
+</span><span class='line'>
+</span><span class='line'>    if ( this == o )
+</span><span class='line'>        return true;
+</span><span class='line'>
+</span><span class='line'>    ObjectId other = massageToObjectId( o );
+</span><span class='line'>    if ( other == null )
+</span><span class='line'>        return false;
+</span><span class='line'>
+</span><span class='line'>    return
+</span><span class='line'>        _time == other._time &&
+</span><span class='line'>        _machine == other._machine &&
+</span><span class='line'>        _inc == other._inc;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The culprit is the massageToObjectId method used in the equals Implementation.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/** Turn an object into an &lt;code&gt;ObjectId&lt;/code&gt;, if possible.
+</span><span class='line'> * Strings will be converted into &lt;code&gt;ObjectId&lt;/code&gt;s, if possible, and &lt;code&gt;ObjectId&lt;/code&gt;s will
+</span><span class='line'> * be cast and returned.  Passing in &lt;code&gt;null&lt;/code&gt; returns &lt;code&gt;null&lt;/code&gt;.
+</span><span class='line'> * @param o the object to convert
+</span><span class='line'> * @return an &lt;code&gt;ObjectId&lt;/code&gt; if it can be massaged, null otherwise
+</span><span class='line'> */
+</span><span class='line'>public static ObjectId massageToObjectId( Object o ){
+</span><span class='line'>    if ( o == null )
+</span><span class='line'>        return null;
+</span><span class='line'>
+</span><span class='line'>    if ( o instanceof ObjectId )
+</span><span class='line'>        return (ObjectId)o;
+</span><span class='line'>
+</span><span class='line'>    if ( o instanceof String ){
+</span><span class='line'>        String s = o.toString();
+</span><span class='line'>        if ( isValid( s ) )
+</span><span class='line'>            return new ObjectId( s );
+</span><span class='line'>    }
+</span><span class='line'>
+</span><span class='line'>    return null;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Switching off Camel Case in Octopress]]></title>
