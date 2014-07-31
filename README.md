@@ -1,4 +1,4 @@
-ajaygeorge.github.com
+ajaygeorge.github.io
 =====================
 
 code backing up the blog.
